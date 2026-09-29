@@ -25,11 +25,14 @@
     </div>
   </header>
   <div class="writealt-toolbar">
-    <div class="writealt-tabs" role="tablist">
-      <button class="active" type="button" data-filter="all">All</button>
-      <button type="button" data-filter="missing">Missing alt text</button>
-      <button type="button" data-filter="needsOptimization">Needs optimization</button>
-      <button type="button" data-filter="optimized">Optimized</button>
+    <div class="writealt-toolbar-left">
+      <label class="writealt-select-all"><input type="checkbox" data-select-all><span></span><strong>Select all visible</strong></label>
+      <div class="writealt-tabs" role="tablist">
+        <button class="active" type="button" data-filter="all">All</button>
+        <button type="button" data-filter="missing">Missing alt text</button>
+        <button type="button" data-filter="needsOptimization">Needs optimization</button>
+        <button type="button" data-filter="optimized">Optimized</button>
+      </div>
     </div>
     <div class="writealt-actions">
       <span data-count>Loading assets...</span>

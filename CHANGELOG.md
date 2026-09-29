@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5 - 2026-09-29
+
+- Added a Select all visible control for bulk generation and optimization.
+
 ## 1.0.4 - 2026-09-29
 
 - Restored Craft thumbnail previews when an asset has no public URL.

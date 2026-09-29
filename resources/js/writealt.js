@@ -25,6 +25,11 @@
   function render() {
     const visible = state.assets.filter(isVisible);
     root.querySelector('[data-count]').textContent = `${visible.length} image${visible.length === 1 ? '' : 's'} shown`;
+    const selectAll = root.querySelector('[data-select-all]');
+    const visibleIds = visible.map((asset) => asset.id);
+    const selectedVisibleCount = visibleIds.filter((id) => state.selected.has(id)).length;
+    selectAll.checked = visibleIds.length > 0 && selectedVisibleCount === visibleIds.length;
+    selectAll.indeterminate = selectedVisibleCount > 0 && selectedVisibleCount < visibleIds.length;
     if (!visible.length) {
       grid.innerHTML = '<div class="writealt-empty">No image assets match this filter.</div>';
       return;
@@ -104,5 +109,13 @@
     if (action.dataset.action === 'optimize-selected') runSelected('optimize');
   });
   root.addEventListener('change', (event) => { if (event.target.matches('[data-select]')) { const id = Number(event.target.dataset.select); event.target.checked ? state.selected.add(id) : state.selected.delete(id); } });
+  root.addEventListener('change', (event) => {
+    if (!event.target.matches('[data-select-all]')) return;
+    state.assets.filter(isVisible).forEach((asset) => {
+      if (event.target.checked) state.selected.add(asset.id);
+      else state.selected.delete(asset.id);
+    });
+    render();
+  });
   load();
 }());
