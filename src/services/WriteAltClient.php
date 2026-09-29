@@ -68,14 +68,36 @@ class WriteAltClient
             ],
         ]);
         $data = $this->decode($response);
-        $alt = $this->findValue($data, ['alt_text', 'altText', 'description', 'text', 'result']);
+        $alt = $this->findValue($data, ['alt_text', 'altText', 'alt_texts', 'altTexts', 'description', 'text', 'result', 'generated_text', 'generatedText']);
         if (is_array($alt)) {
-            $alt = $alt[$language] ?? $alt['alt_text'] ?? $alt['description'] ?? reset($alt);
+            $alt = $this->firstText([
+                $alt[$language] ?? null,
+                $alt['alt_text'] ?? null,
+                $alt['description'] ?? null,
+                $alt['en'] ?? null,
+                ...array_values($alt),
+            ]);
         }
         if (!is_string($alt) || trim($alt) === '') {
             throw new RuntimeException('WriteAlt returned no alt text for this image.');
         }
         return trim($alt);
+    }
+
+    private function firstText(array $values): ?string
+    {
+        foreach ($values as $value) {
+            if (is_string($value) && trim($value) !== '') {
+                return trim($value);
+            }
+            if (is_array($value)) {
+                $nested = $this->firstText(array_values($value));
+                if ($nested !== null) {
+                    return $nested;
+                }
+            }
+        }
+        return null;
     }
 
     private function findValue(mixed $value, array $keys): mixed

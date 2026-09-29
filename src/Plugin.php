@@ -47,15 +47,22 @@ class Plugin extends BasePlugin
             $event->rules['writealt'] = ['template' => 'writealt/index.twig'];
         });
 
-        Craft::$app->getView()->hook('cp.assets.edit.content', static function (array &$context): string {
+        $assetToolsHook = static function (array &$context): string {
+            static $rendered = false;
+            if ($rendered) {
+                return '';
+            }
             $asset = $context['asset'] ?? null;
             if (!$asset instanceof Asset || !Craft::$app->getUser()->checkPermission('accessPlugin-writealt')) {
                 return '';
             }
 
+            $rendered = true;
             Craft::$app->getView()->registerAssetBundle(WriteAltAsset::class);
             return Craft::$app->getView()->renderTemplate('writealt/asset-tools', ['asset' => $asset]);
-        });
+        };
+        Craft::$app->getView()->hook('cp.assets.edit', $assetToolsHook);
+        Craft::$app->getView()->hook('cp.assets.edit.content', $assetToolsHook);
     }
 
     protected function createSettingsModel(): ?Model

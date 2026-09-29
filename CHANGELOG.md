@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.7 - 2026-09-29
+
+- Fixed generation parsing for the API's `data.alt_texts` response.
+- Registered the native asset action on Craft asset edit hooks.
+- Styled generation errors as contained dashboard alerts.
+
 ## 1.0.6 - 2026-09-29
 
 - Added a native Generate alt text button to Craft asset edit screens.
