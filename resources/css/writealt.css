@@ -1,6 +1,6 @@
 #writealt-app { max-width: 1440px; margin: 0 auto; color: #13294b; }
 .writealt-header { display: flex; justify-content: space-between; gap: 24px; padding: 8px 0 28px; border-bottom: 1px solid #dfe7f1; }
-.writealt-brand { display: flex; align-items: center; gap: 9px; font-size: 22px; color: #13294b; margin-bottom: 28px; }
+.writealt-brand { display: flex; align-items: center; gap: 9px; font-size: 22px; color: #13294b; margin-bottom: 28px; }.writealt-logo { display: block; width: 34px; height: 34px; }.writealt-logo svg { display: block; width: 100%; height: 100%; }
 .writealt-brand strong span { color: #2d6cdf; }
 .writealt-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 2px solid #2d6cdf; border-radius: 10px; font-size: 11px; color: #2d6cdf; font-weight: 700; }
 .writealt-eyebrow { margin: 0 0 6px; color: #2d6cdf; font-weight: 700; font-size: 11px; letter-spacing: .12em; }

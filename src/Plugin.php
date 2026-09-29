@@ -23,6 +23,15 @@ class Plugin extends BasePlugin
         return 'WriteAlt - AI Alt Text & SEO';
     }
 
+    public function getCpNavItem(): ?array
+    {
+        $item = parent::getCpNavItem();
+        if ($item !== null) {
+            unset($item['icon']);
+        }
+        return $item;
+    }
+
     public function init(): void
     {
         parent::init();

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4 - 2026-09-29
+
+- Restored Craft thumbnail previews when an asset has no public URL.
+- Added the full WriteAlt logo beside the dashboard title.
+- Removed the plugin SVG icon from Craft’s left navigation.
+
 ## 1.0.3 - 2026-09-29
 
 - Added Craft-compatible full-color and control-panel navigation icons.

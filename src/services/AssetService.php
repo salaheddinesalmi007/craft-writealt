@@ -51,11 +51,24 @@ class AssetService
         $alt = trim((string)($asset->alt ?? ''));
         $size = (int)($asset->size ?? 0);
         $optimized = $this->isOptimized($asset);
+        $previewUrl = '';
+        try {
+            $previewUrl = (string)($asset->thumbUrl(640) ?? '');
+        } catch (Throwable) {
+            $previewUrl = '';
+        }
+        if ($previewUrl === '') {
+            try {
+                $previewUrl = (string)($asset->getUrl() ?? '');
+            } catch (Throwable) {
+                $previewUrl = '';
+            }
+        }
         return [
             'id' => (int)$asset->id,
             'title' => (string)$asset->title,
             'filename' => (string)$asset->filename,
-            'url' => (string)($asset->getUrl() ?? ''),
+            'url' => $previewUrl,
             'alt' => $alt,
             'size' => $size,
             'sizeLabel' => $this->formatBytes($size),
