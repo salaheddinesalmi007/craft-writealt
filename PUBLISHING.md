@@ -13,7 +13,7 @@
 
 1. The public repository is https://github.com/salaheddinesalmi007/craft-writealt. Keep `composer.json`, `README.md`, `CHANGELOG.md`, `LICENSE.txt`, `icon.svg`, and the plugin source at the repository root.
 2. Create or sign in to a Craft Console account and connect the GitHub account that owns the repository.
-3. In Craft Console, choose **Plugins**, add the repository, and complete the plugin profile. Use the name **WriteAlt - AI Alt Text & SEO**, the handle `writealt`, the homepage `https://writealt.com`, the documentation URL `https://writealt.com`, and the support email `support@writealt.com`.
+3. In Craft Console, choose **Plugins**, add the repository, and complete the plugin profile. Use the name **WriteAlt - AI Alt Text & SEO**, the handle `writealt`, the homepage `https://writealt.com`, the documentation URL `https://writealt.com/documentation`, and the support email `support@writealt.com`.
 4. Provide the Marketplace description from `README.md`, the MIT license, the icon, and the current changelog.
 5. Submit the plugin for approval. Craft reviews the listing and package before it is published.
 6. After approval, create a semantic Git tag such as `1.0.0` and push it. Craft uses the tagged release for the Marketplace package.

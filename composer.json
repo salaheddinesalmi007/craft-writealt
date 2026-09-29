@@ -25,13 +25,13 @@
     "developer": "WriteAlt",
     "developerUrl": "https://writealt.com",
     "developerEmail": "support@writealt.com",
-    "documentationUrl": "https://writealt.com"
+    "documentationUrl": "https://writealt.com/documentation"
   },
   "support": {
     "email": "support@writealt.com",
     "issues": "https://writealt.com/support",
     "source": "https://github.com/salaheddinesalmi007/craft-writealt",
-    "docs": "https://writealt.com"
+    "docs": "https://writealt.com/documentation"
   },
   "homepage": "https://writealt.com",
   "minimum-stability": "stable"
