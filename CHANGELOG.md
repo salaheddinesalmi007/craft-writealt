@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.8 - 2026-09-29
+
+- Moved asset status labels into the white card content area.
+- Repackaged the supplied WriteAlt SVG wordmark with the plugin.
+
 ## 1.0.7 - 2026-09-29
 
 - Fixed generation parsing for the API's `data.alt_texts` response.

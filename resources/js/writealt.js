@@ -44,9 +44,9 @@
         <div class="writealt-image-wrap">
           <label class="writealt-check"><input type="checkbox" data-select="${asset.id}" ${selected ? 'checked' : ''} aria-label="Select ${escapeHtml(asset.filename)}"><span></span></label>
           ${asset.url ? `<img src="${escapeHtml(asset.url)}" alt="" loading="lazy">` : '<div class="writealt-no-image">No preview</div>'}
-          <div class="writealt-badges"><span class="badge ${missing ? 'missing' : 'saved'}">${statusText}</span>${optimizationText ? `<span class="badge ${asset.optimized ? 'optimized' : 'needs'}">${optimizationText}</span>` : ''}</div>
         </div>
         <div class="writealt-card-body">
+          <div class="writealt-card-status"><span class="badge ${missing ? 'missing' : 'saved'}">${statusText}</span>${optimizationText ? `<span class="badge ${asset.optimized ? 'optimized' : 'needs'}">${optimizationText}</span>` : ''}</div>
           <div class="writealt-title-row"><h2 title="${escapeHtml(asset.filename)}">${escapeHtml(asset.title || asset.filename)}</h2><span>${formatSize(asset)}</span></div>
           <p class="writealt-filename">${escapeHtml(asset.filename)}</p>
           <p class="writealt-alt ${missing ? 'muted missing-copy' : ''}">${missing ? 'Alt text not added yet.' : escapeHtml(asset.alt)}</p>
