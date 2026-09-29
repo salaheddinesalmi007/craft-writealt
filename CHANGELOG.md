@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 - 2026-09-29
+
+- Registered the WriteAlt control-panel route explicitly for Craft 5.
+- Corrected the dashboard asset bundle path.
+
 ## 1.0.0 - 2026-09-29
 
 - Added a native Craft CMS control-panel section for image assets.

@@ -21,6 +21,7 @@
     "name": "WriteAlt - AI Alt Text & SEO",
     "handle": "writealt",
     "class": "writealt\\Plugin",
+    "hasCpSection": true,
     "developer": "WriteAlt",
     "developerUrl": "https://writealt.com",
     "developerEmail": "support@writealt.com",

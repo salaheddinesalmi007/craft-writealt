@@ -5,10 +5,13 @@ namespace writealt;
 use Craft;
 use craft\base\Model;
 use craft\base\Plugin as BasePlugin;
+use craft\events\RegisterUrlRulesEvent;
+use craft\web\UrlManager;
 use writealt\models\Settings;
 use writealt\services\AssetService;
 use writealt\services\LanguageCatalog;
 use writealt\services\WriteAltClient;
+use yii\base\Event;
 
 class Plugin extends BasePlugin
 {
@@ -28,6 +31,10 @@ class Plugin extends BasePlugin
             'client' => WriteAltClient::class,
             'assetService' => AssetService::class,
         ]);
+
+        Event::on(UrlManager::class, UrlManager::EVENT_REGISTER_CP_URL_RULES, static function (RegisterUrlRulesEvent $event): void {
+            $event->rules['writealt'] = ['template' => 'writealt/index.twig'];
+        });
     }
 
     protected function createSettingsModel(): ?Model
