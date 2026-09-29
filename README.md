@@ -37,6 +37,6 @@ Generated text is saved to the selected Craft Asset's native `alt` field. Optimi
 
 ## Support
 
-Documentation: https://writealt.com/documentation
+Website: https://writealt.com
 
 Support: support@writealt.com
