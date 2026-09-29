@@ -1,0 +1,44 @@
+{% extends "_layouts/cp" %}
+{% import '_includes/forms.twig' as forms %}
+{% set title = 'WriteAlt - AI Alt Text & SEO' %}
+{% set selectedSubnavItem = 'writealt' %}
+{% do view.registerAssetBundle('writealt\\assetbundles\\WriteAltAsset') %}
+
+{% block content %}
+<div id="writealt-app"
+     data-assets-url="{{ actionUrl('writealt/dashboard/assets')|e('html_attr') }}"
+     data-credits-url="{{ actionUrl('writealt/dashboard/credits')|e('html_attr') }}"
+     data-generate-url="{{ actionUrl('writealt/dashboard/generate')|e('html_attr') }}"
+     data-optimize-url="{{ actionUrl('writealt/dashboard/optimize')|e('html_attr') }}"
+     data-csrf-token="{{ craft.app.request.csrfToken|e('html_attr') }}">
+  <header class="writealt-header">
+    <div>
+      <div class="writealt-brand"><span class="writealt-mark">WA</span><strong>Write<span>Alt</span></strong></div>
+      <p class="writealt-eyebrow">ASSET WORKSPACE</p>
+      <h1>WriteAlt for Craft CMS</h1>
+      <p class="writealt-lead">Generate useful alt text and optimize image assets without leaving Craft.</p>
+    </div>
+    <div class="writealt-header-actions">
+      <a class="btn" href="{{ cpUrl('settings/plugins/writealt') }}">⚙ Settings</a>
+      <button class="btn submit" type="button" data-action="refresh">↻ Refresh assets</button>
+      <span class="writealt-connection" data-connection>Checking connection...</span>
+      <span class="writealt-credits" data-credits>Credits —</span>
+    </div>
+  </header>
+  <div class="writealt-toolbar">
+    <div class="writealt-tabs" role="tablist">
+      <button class="active" type="button" data-filter="all">All</button>
+      <button type="button" data-filter="missing">Missing alt text</button>
+      <button type="button" data-filter="needsOptimization">Needs optimization</button>
+      <button type="button" data-filter="optimized">Optimized</button>
+    </div>
+    <div class="writealt-actions">
+      <span data-count>Loading assets...</span>
+      <button class="btn" type="button" data-action="generate-selected">✦ Generate selected</button>
+      <button class="btn" type="button" data-action="optimize-selected">⚡ Optimize selected</button>
+    </div>
+  </div>
+  <div class="writealt-status" data-status aria-live="polite"></div>
+  <div class="writealt-grid" data-grid></div>
+</div>
+{% endblock %}

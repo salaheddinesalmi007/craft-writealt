@@ -1,0 +1,36 @@
+{
+  "name": "writealt/craft-writealt",
+  "description": "Generate alt text and optimize Craft CMS image assets with WriteAlt.",
+  "type": "craft-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "WriteAlt",
+      "homepage": "https://writealt.com"
+    }
+  ],
+  "require": {
+    "craftcms/cms": "^5.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "writealt\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "WriteAlt - AI Alt Text & SEO",
+    "handle": "writealt",
+    "class": "writealt\\Plugin",
+    "developer": "WriteAlt",
+    "developerUrl": "https://writealt.com",
+    "developerEmail": "support@writealt.com",
+    "documentationUrl": "https://writealt.com/documentation"
+  },
+  "support": {
+    "email": "support@writealt.com",
+    "issues": "https://writealt.com/support",
+    "docs": "https://writealt.com/documentation"
+  },
+  "homepage": "https://writealt.com",
+  "minimum-stability": "stable"
+}

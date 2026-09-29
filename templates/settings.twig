@@ -1,0 +1,44 @@
+{% import '_includes/forms.twig' as forms %}
+
+{{ forms.passwordField({
+  label: 'WriteAlt API key',
+  instructions: 'Stored in Craft plugin settings and used only for server-side WriteAlt requests.',
+  id: 'apiKey',
+  name: 'apiKey',
+  value: settings.apiKey,
+  required: true,
+  autocomplete: 'new-password'
+}) }}
+
+{{ forms.selectField({
+  label: 'Generation language',
+  id: 'language',
+  name: 'language',
+  value: settings.language,
+  options: languageOptions
+}) }}
+
+{{ forms.selectField({
+  label: 'Generation style',
+  id: 'styleId',
+  name: 'styleId',
+  value: settings.styleId,
+  options: styleOptions
+}) }}
+
+{{ forms.textField({
+  label: 'Optional SEO keywords',
+  instructions: 'Comma-separated product or context terms to guide generation.',
+  id: 'keywords',
+  name: 'keywords',
+  value: settings.keywords
+}) }}
+
+{{ forms.textField({
+  label: 'Optimize images larger than (MB)',
+  id: 'thresholdMb',
+  name: 'thresholdMb',
+  value: settings.thresholdMb,
+  size: 8,
+  inputmode: 'decimal'
+}) }}
