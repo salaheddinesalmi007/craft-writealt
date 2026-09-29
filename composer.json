@@ -24,14 +24,12 @@
     "hasCpSection": true,
     "developer": "WriteAlt",
     "developerUrl": "https://writealt.com",
-    "developerEmail": "support@writealt.com",
-    "documentationUrl": "https://writealt.com/documentation"
+    "developerEmail": "support@writealt.com"
   },
   "support": {
     "email": "support@writealt.com",
     "issues": "https://writealt.com/support",
-    "source": "https://github.com/salaheddinesalmi007/craft-writealt",
-    "docs": "https://writealt.com/documentation"
+    "source": "https://github.com/salaheddinesalmi007/craft-writealt"
   },
   "homepage": "https://writealt.com",
   "minimum-stability": "stable"

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.9 - 2026-09-29
+
+- Removed the blocked documentation URL from the package metadata used by Craft Console.
+
 ## 1.0.8 - 2026-09-29
 
 - Moved asset status labels into the white card content area.
