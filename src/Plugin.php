@@ -6,6 +6,8 @@ use Craft;
 use craft\base\Model;
 use craft\base\Plugin as BasePlugin;
 use craft\events\RegisterUrlRulesEvent;
+use craft\elements\Asset;
+use writealt\assetbundles\WriteAltAsset;
 use craft\web\UrlManager;
 use writealt\models\Settings;
 use writealt\services\AssetService;
@@ -43,6 +45,16 @@ class Plugin extends BasePlugin
 
         Event::on(UrlManager::class, UrlManager::EVENT_REGISTER_CP_URL_RULES, static function (RegisterUrlRulesEvent $event): void {
             $event->rules['writealt'] = ['template' => 'writealt/index.twig'];
+        });
+
+        Craft::$app->getView()->hook('cp.assets.edit.content', static function (array &$context): string {
+            $asset = $context['asset'] ?? null;
+            if (!$asset instanceof Asset || !Craft::$app->getUser()->checkPermission('accessPlugin-writealt')) {
+                return '';
+            }
+
+            Craft::$app->getView()->registerAssetBundle(WriteAltAsset::class);
+            return Craft::$app->getView()->renderTemplate('writealt/asset-tools', ['asset' => $asset]);
         });
     }
 

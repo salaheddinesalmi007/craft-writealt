@@ -1,0 +1,7 @@
+<div class="writealt-asset-tools" data-writealt-asset-tools
+     data-asset-id="{{ asset.id }}"
+     data-generate-url="{{ actionUrl('writealt/dashboard/generate')|e('html_attr') }}"
+     data-csrf-token="{{ craft.app.request.csrfToken|e('html_attr') }}">
+  <button class="btn submit" type="button" data-writealt-generate>✦ Generate alt text with WriteAlt</button>
+  <span class="writealt-asset-tools-status" data-writealt-asset-status aria-live="polite"></span>
+</div>

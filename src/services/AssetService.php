@@ -64,6 +64,13 @@ class AssetService
                 $previewUrl = '';
             }
         }
+        if ($previewUrl === '') {
+            try {
+                $previewUrl = (string)$asset->getDataUrl();
+            } catch (Throwable) {
+                $previewUrl = '';
+            }
+        }
         return [
             'id' => (int)$asset->id,
             'title' => (string)$asset->title,

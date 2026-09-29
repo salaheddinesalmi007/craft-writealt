@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.6 - 2026-09-29
+
+- Added a native Generate alt text button to Craft asset edit screens.
+- Added a data preview fallback for private or non-public asset volumes.
+- Applied the supplied WriteAlt wordmark to the dashboard.
+- Clarified the missing-alt-text state on each asset card.
+
 ## 1.0.5 - 2026-09-29
 
 - Added a Select all visible control for bulk generation and optimization.

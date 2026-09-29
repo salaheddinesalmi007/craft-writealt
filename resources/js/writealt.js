@@ -49,7 +49,7 @@
         <div class="writealt-card-body">
           <div class="writealt-title-row"><h2 title="${escapeHtml(asset.filename)}">${escapeHtml(asset.title || asset.filename)}</h2><span>${formatSize(asset)}</span></div>
           <p class="writealt-filename">${escapeHtml(asset.filename)}</p>
-          <p class="writealt-alt ${missing ? 'muted' : ''}">${missing ? 'No alt text saved for this asset.' : escapeHtml(asset.alt)}</p>
+          <p class="writealt-alt ${missing ? 'muted missing-copy' : ''}">${missing ? 'Alt text not added yet.' : escapeHtml(asset.alt)}</p>
           <div class="writealt-card-actions">
             <button class="btn submit" type="button" data-action="generate" data-id="${asset.id}" ${busy ? 'disabled' : ''}>✦ ${missing ? 'Generate alt text' : 'Regenerate alt text'}</button>
             <button class="btn" type="button" data-action="optimize" data-id="${asset.id}" ${busy ? 'disabled' : ''}>⚡ ${asset.optimized ? 'Optimize again' : 'Optimize image'}</button>

@@ -8,7 +8,7 @@ use craft\web\assets\cp\CpAsset;
 class WriteAltAsset extends AssetBundle
 {
     public $sourcePath = __DIR__ . '/../../resources';
-    public $js = ['js/writealt.js'];
+    public $js = ['js/writealt.js', 'js/asset-tools.js'];
     public $css = ['css/writealt.css'];
     public $depends = [CpAsset::class];
 }
