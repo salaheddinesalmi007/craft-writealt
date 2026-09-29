@@ -29,6 +29,7 @@
   "support": {
     "email": "support@writealt.com",
     "issues": "https://writealt.com/support",
+    "source": "https://github.com/salaheddinesalmi007/craft-writealt",
     "docs": "https://writealt.com/documentation"
   },
   "homepage": "https://writealt.com",
