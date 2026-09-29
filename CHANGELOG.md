@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.10 - 2026-09-29
+
+- Restored the documentation metadata so it exactly matches the Marketplace listing URL.
+
 ## 1.0.9 - 2026-09-29
 
 - Removed the blocked documentation URL from the package metadata used by Craft Console.
