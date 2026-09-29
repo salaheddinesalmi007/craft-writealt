@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 - 2026-09-29
+
+- Placed control-panel templates under the Composer source root so Craft can resolve them correctly.
+
 ## 1.0.1 - 2026-09-29
 
 - Registered the WriteAlt control-panel route explicitly for Craft 5.
