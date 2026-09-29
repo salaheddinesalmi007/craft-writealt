@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 - 2026-09-29
+
+- Added Craft-compatible full-color and control-panel navigation icons.
+
 ## 1.0.2 - 2026-09-29
 
 - Placed control-panel templates under the Composer source root so Craft can resolve them correctly.
